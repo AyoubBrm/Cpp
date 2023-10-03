@@ -16,5 +16,6 @@ int main()
     }
     zombie1 = zombieHorde(n , name);
     delete[] zombie1;
+    // while (1);
     return (0);
 }

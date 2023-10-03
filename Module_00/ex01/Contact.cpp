@@ -2,11 +2,9 @@
 
 Contact::Contact()
 {
-
 };
 Contact::~Contact()
 {
-
 };
 
 void Contact::add(void)
@@ -80,17 +78,17 @@ void Contact::add(void)
     }
     int Contact::search()
     {
-        char i;
+        std::string i;
         std::cout << std::endl;
         std::cout << "Enter the index from 1 to 8 🙂: ";
         std::cin >> i;
-        if (i > '8' || i <= '0')
+        if (i[0] > '8' || i[0] <= '0' || i[1])
         {
             std::cout << "Sorry The Index Is Invalid 🤔!";
             return (0);
-        }ZombieZombieZombie
+        }
         std::cin.ignore();
-        return (std::atoi(&i));
+        return (std::atoi(i.c_str()));
     }
     void Contact::print_info(int i)
     {

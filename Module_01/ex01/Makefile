@@ -1,10 +1,12 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-SRC =  zombieHorde.cpp Zombie.cpp main.cpp	
+SRC =  zombieHorde.cpp Zombie.cpp main.cpp -std=c++98
 OBJ = ${SRC:.cpp=.o}
 NAME  = Zombie 
 
-all : ${OBJ}
+all : ${NAME}
+
+$(NAME) : $(OBJ)
 	${CC} ${FLAGS} ${OBJ} -o ${NAME}
 
 clean : 

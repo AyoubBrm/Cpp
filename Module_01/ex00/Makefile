@@ -1,10 +1,12 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-SRC =  newZombie.cpp randomChump.cpp Zombie.cpp main.cpp
+SRC =  newZombie.cpp randomChump.cpp Zombie.cpp main.cpp -std=c++98
 OBJ = ${SRC:.cpp=.o}
 NAME  = Zombie 
 
-all : ${OBJ}
+all : ${NAME}
+
+$(NAME) : $(OBJ)
 	${CC} ${FLAGS} ${OBJ} -o ${NAME}
 
 clean : 

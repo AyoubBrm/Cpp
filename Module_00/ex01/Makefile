@@ -1,6 +1,6 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-SRC = PhoneBook.cpp Contact.cpp main.cpp
+SRC = PhoneBook.cpp Contact.cpp main.cpp -std=c++98
 OBJ = ${SRC:.cpp=.o}
 NAME  = phoneBook
 

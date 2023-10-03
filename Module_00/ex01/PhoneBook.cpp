@@ -17,7 +17,6 @@ void PhoneBook::print_contcat(int i)
     std::string nick_name;
     std::string darkest_secret;
     std::string phone_number;
-
     first_name = contacts[i].get_firstname(first_name);
     last_name = contacts[i].get_lastname(last_name);
     nick_name = contacts[i].get_nickname(nick_name);
@@ -65,7 +64,7 @@ void PhoneBook::search_for_contact(int i)
         x++;
     }
     while (y == 0)
-        y = this->contacts->search();
+        y = contacts[0].search();
     print_contcat(y - 1);
 }
 
