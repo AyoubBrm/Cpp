@@ -1,8 +1,8 @@
 CC = c++
-FLAGS = -Wall -Wextra -Werror
-SRC =  Weapon.cpp HumanA.cpp HumanB.cpp main.cpp -std=c++98
+FLAGS = -Wall -Wextra -Werror 
+SRC =  Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 OBJ = ${SRC:.cpp=.o}
-NAME  = Human 
+NAME  = Human
 
 all : ${NAME}
 

@@ -1,7 +1,13 @@
 #include "File.hpp"
 
-int main()
+int main(int ac, char **av)
 {
+    (void)av;
+    if (ac > 1)
+    {
+        std::cout << "Please Enter File Without Arg !" << std::endl;
+        return (0);
+    }
     File file;
     std::string file_name;
     std::string s1;

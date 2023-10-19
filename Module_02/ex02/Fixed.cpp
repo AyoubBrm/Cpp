@@ -106,26 +106,34 @@ Fixed& Fixed::operator/(const Fixed& point)
     this->fixed_point = this->toFloat() / point.toFloat();
     return (*this);
 }
-Fixed& Fixed::operator++()
+
+Fixed Fixed::operator++()
 {
     this->fixed_point++;
     return (*this);
 }
-Fixed& Fixed::operator++(int)
+
+Fixed Fixed::operator++(int)
 {
-    ++this->fixed_point;
-    return (*this);
+    Fixed tmp = *this;
+    this->fixed_point++;
+    return (tmp);
 }
-Fixed& Fixed::operator--(int)
+
+
+Fixed Fixed::operator--(int)
 {
-    --this->fixed_point;
-    return (*this);
+    Fixed tmp = *this;
+    this->fixed_point--;
+    return (tmp);
 }
-Fixed& Fixed::operator--()
+
+Fixed Fixed::operator--()
 {
     this->fixed_point--;
     return (*this);
 }
+
 Fixed& Fixed::min(Fixed& point_a, Fixed& point_b)
 {
     if (point_a < point_b)

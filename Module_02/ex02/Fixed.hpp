@@ -30,15 +30,20 @@ class Fixed
     Fixed& operator-(const Fixed& point);
     Fixed& operator/(const Fixed& point);
 
-    Fixed& operator++();
-    Fixed& operator++(int);
-    Fixed& operator--(int);
-    Fixed& operator--();
-    
+    Fixed operator++(int); //i++ post
+    Fixed operator++(); // ++i pre
+
+
+
+
+
+    Fixed operator--(); 
+    Fixed operator--(int);
+
     static Fixed& min(Fixed& point_a, Fixed& point_b);
     static Fixed& max( Fixed& point_a, Fixed& point_b);
-    const static Fixed& min(const Fixed& point_a, const Fixed& point_b);
-    static const Fixed& max(const Fixed& point_a, const Fixed& point_b);
+    static const Fixed& min(const Fixed& point_a, const Fixed& point_b);
+    static const Fixed& max(const Fixed& point_a,const Fixed& point_b);
 };
 std::ostream& operator<<(std::ostream& COUT, Fixed const& f_class);
 #endif
