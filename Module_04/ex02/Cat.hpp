@@ -12,7 +12,6 @@ class Cat : public A_Animal
     ~Cat();
     Cat(Cat& copy);
     Cat& operator=(Cat& op);
-    std::string getType() const;
     void makeSound() const;
 };
 #endif

@@ -1,5 +1,5 @@
 CC = c++
-FLAGS = -Wextra -Werror -Wall -std=c++98
+FLAGS = -Wextra -Werror -Wall -std=c++98 #-fsanitize=address -g
 SRC = Amateria.cpp main.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp 
 OBJ = ${SRC:.cpp=.o}
 NAME = Character

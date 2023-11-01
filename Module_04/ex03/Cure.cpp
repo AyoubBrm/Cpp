@@ -1,7 +1,7 @@
 #include "Cure.hpp"
 #include "Ice.hpp"
 
-Cure::Cure()
+Cure::Cure(): AMateria("cure")
 {
 
 }

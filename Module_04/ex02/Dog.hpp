@@ -13,7 +13,6 @@ class Dog : public A_Animal
     ~Dog();
     Dog(Dog& copy);
     Dog& operator=(Dog& op); 
-    std::string getType() const;
     void makeSound() const;
 };
 

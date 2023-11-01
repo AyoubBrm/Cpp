@@ -14,13 +14,31 @@ MateriaSource::~MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& copy)
 {
+    for (int i = 0; i < 4; i++)
+        this->type[i] = NULL;
     *this = copy;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& op)
 {
-    for(int i = 0; i < 4; i++)
-        this->type[i] = op.type[i];
+    if(this != &op)
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if(type[i] != NULL)
+            {
+                delete type[i];
+                type[i] = NULL;
+            }
+        }
+        for(int i = 0; i < 4; i++)
+        {
+            if(op.type[i] != NULL)
+                type[i] = op.type[i]->clone();
+            else
+                type[i] = NULL;
+        }
+    }
     return (*this);
 }
 
@@ -28,19 +46,23 @@ void MateriaSource::learnMateria(AMateria* type)
 {  
     for(int i = 0; i < 4; i++)
     {
-        if (this->type[i] != NULL)
+        if (this->type[i] == NULL)
+        {
             this->type[i] = type->clone();
+            break;
+        }
     }
+    delete type;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (type == "ice" )
-            return  this->type[i] = new Ice(); 
-        else if (type == "cure")
-            return this->type[i] = new Cure(); 
+        if (this->type[i] != NULL && this->type[i]->getType() == type)
+        {
+            return  this->type[i];
+        }
     }
-    return (0);
+    return (NULL);
 }

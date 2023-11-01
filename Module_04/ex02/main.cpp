@@ -20,7 +20,6 @@ int main ()
         a[i] = new Cat();
     for(int i = 1; i < 2; i++)
         a[i] = new Dog();
-
     delete j;
     delete i;
     delete Wrong;
