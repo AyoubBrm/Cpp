@@ -43,7 +43,9 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& op)
 }
 
 void MateriaSource::learnMateria(AMateria* type)
-{  
+{
+    if (type == NULL)
+        return ;
     for(int i = 0; i < 4; i++)
     {
         if (this->type[i] == NULL)

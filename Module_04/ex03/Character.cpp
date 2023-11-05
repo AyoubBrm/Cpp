@@ -45,6 +45,7 @@ Character::Character(const Character &copy)
         this->slot[i] = NULL;
     *this = copy;
 }
+
 Character &Character::operator=(const Character &op)
 {
     if (this != &op)
@@ -58,10 +59,12 @@ Character &Character::operator=(const Character &op)
     }
     return (*this);
 }
+
 std::string const &Character::getName() const
 {
     return (this->name);
 }
+
 void Character::equip(AMateria *m)
 {
     int i;
@@ -72,7 +75,7 @@ void Character::equip(AMateria *m)
         if (this->slot[i] == NULL && m)
         {
             this->slot[i] = m->clone();
-            break;
+            return;
         }
         i++;
     }
@@ -95,7 +98,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (slot[idx] != NULL)
+    if (slot[idx] != NULL && idx >= 0 && idx < 4)
         slot[idx]->use(target);
     else
         std::cerr << "This inventor " << idx << " is empty" << std::endl;
