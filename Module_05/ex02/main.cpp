@@ -6,15 +6,21 @@
 
 int main()
 {
-    Bureaucrat a("me", 1);
-    ShrubberyCreationForm b("Form_A");
-    RobotomyRequestForm c("Form_B");
-    PresidentialPardonForm d("Form_D");
-    
-    a.signForm(b);
-    a.executeForm(b);
-    a.signForm(c);
-    a.executeForm(c);
-    a.signForm(d);
-    a.executeForm(d);
+    try
+    {
+        Bureaucrat a("me", 1);
+        ShrubberyCreationForm b("Form_A");
+        RobotomyRequestForm c("Form_B");
+        PresidentialPardonForm d("Form_D");
+        a.signForm(b);
+        a.executeForm(b);
+        a.signForm(c);
+        a.executeForm(c);
+        a.signForm(d);
+        a.executeForm(d);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }  
 }

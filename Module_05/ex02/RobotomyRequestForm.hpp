@@ -12,6 +12,7 @@ class Bureaucrat;
 class RobotomyRequestForm : public AForm
 {
     public:
+        // default constructer aras l9lwa o seti sign l ->false fl constructers aras l9lwa
         RobotomyRequestForm(std::string target);
         ~RobotomyRequestForm();
         RobotomyRequestForm(RobotomyRequestForm& copy);

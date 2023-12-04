@@ -14,7 +14,8 @@ class Form
         const int grade_to_sign;
         const int grade_to_execute;
     public:
-        Form(std::string name, const int grade_sign_form, const int grade_execute_form);
+        Form();
+        Form(std::string name, bool sign, const int grade_sign_form, const int grade_execute_form);
         Form(Form& copy);
         ~Form();
         Form& operator=(Form& op);

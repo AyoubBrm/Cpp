@@ -10,12 +10,11 @@ class AFrom;
 
 int main()
 {
+    Intern someRandomIntern;
+    Form *rrf = someRandomIntern.makeForm("presidential pardon", "FORM_B");
     try
     {
-        Bureaucrat a("me", 150);
-        Intern someRandomIntern;
-        Form *rrf;
-        rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+        Bureaucrat a("me", 1);
         a.signForm(*rrf);
         a.executeForm(*rrf);
     }
@@ -23,5 +22,5 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    
+    delete rrf;
 }

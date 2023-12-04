@@ -1,4 +1,12 @@
 #include "AForm.hpp"
+AForm::AForm() 
+    : name( "Default" ), sign( 0 ), grade_to_sign( 0 ), grade_to_execute( 0 )
+{
+    if (this->grade_to_sign < 1)
+        throw GradeTooHighException();
+    else if (this->grade_to_sign > 150)
+        throw GradeTooLowException();
+}
 
 AForm::AForm(std::string name, const int grade_sign_form, const int grade_execute_form)
     : name( name ), grade_to_sign( grade_sign_form ), grade_to_execute( grade_execute_form )
@@ -8,6 +16,7 @@ AForm::AForm(std::string name, const int grade_sign_form, const int grade_execut
     else if (this->grade_to_sign > 150)
         throw GradeTooLowException();
 }
+
 AForm::AForm(std::string name, bool sign, const int grade_sign_form, const int grade_execute_form)
     : name( name ), sign( sign ), grade_to_sign( grade_sign_form ), grade_to_execute( grade_execute_form )
 {

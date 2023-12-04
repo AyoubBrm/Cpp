@@ -1,8 +1,8 @@
 CC = c++
 CPPFLAGS = -Wextra -Werror -Wall -std=c++98 #-fsanitize=address -g
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Serialization.cpp
 OBJ = ${SRC:.cpp=.o}
-NAME = Bureaucrat
+NAME = Serialization
 
 all : $(NAME)
 

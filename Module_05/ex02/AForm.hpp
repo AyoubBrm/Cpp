@@ -14,10 +14,11 @@ class AForm
         const int grade_to_sign;
         const int grade_to_execute;
     public:
+        AForm();
         AForm(std::string name, bool sign, const int grade_sign_form, const int grade_execute_form);
         AForm(std::string name, const int grade_sign_form, const int grade_execute_form);
         AForm(AForm& copy);
-        ~AForm();
+        virtual ~AForm();
         AForm& operator=(AForm& op);
         std::string get_name() const;
         int get_bool() const;

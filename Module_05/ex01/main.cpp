@@ -4,9 +4,10 @@ int main()
 {
     try
     {
-        Bureaucrat a("ayoub", 60);
+        Bureaucrat a("ayoub", 151);
         std::cout << a << std::endl;
-        Form b("Form_A", 50, 0);
+        a.increment();
+        Form b("Form_A", 0, 59, 0);
         a.signForm(b);
         std::cout << b << std::endl;
     }

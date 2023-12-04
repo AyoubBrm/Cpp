@@ -4,7 +4,7 @@ int main()
 {
     try
     {
-        Bureaucrat a("ayoub", 0);
+        Bureaucrat a("ayoub", 1);
         a.increment();
         std::cout << a << std::endl;
     }
