@@ -211,9 +211,8 @@ void Pmergeme::rvrc(std::vector<int> rest, size_t range)
     {    
         if (i == 0)
             main.push_back(arr[i]);
-        else if (i % 2 == 1) {
+        else if (i % 2 == 0) 
             main.push_back(arr[i]);
-        }
         else
             pend.push_back(arr[i]);
     }
