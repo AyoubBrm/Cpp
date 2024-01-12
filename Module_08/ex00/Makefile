@@ -1,15 +1,15 @@
 CC = c++
 CPPFLAGS = -Wextra -Werror -Wall -std=c++98 #-fsanitize=address -g
-SRC = main.cpp 
+SRC = main.cpp
 OBJ = ${SRC:.cpp=.o}
-NAME = whatever
+NAME = easyfind
 
 all : $(NAME)
 
-%.o		:	%.cpp whatever.hpp
+%.o		:	%.cpp easyfind.hpp easyfind.tpp
 		$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJ) whatever.hpp
+$(NAME) : $(OBJ) easyfind.hpp easyfind.tpp
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean : 
 	rm -rf $(OBJ)

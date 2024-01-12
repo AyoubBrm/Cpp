@@ -6,7 +6,10 @@ NAME = iter
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+%.o		:	%.cpp iter.hpp
+		$(CC) $(CPPFLAGS) -c $< -o $@
+
+$(NAME) : $(OBJ) iter.hpp
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean : 
 	rm -rf $(OBJ)

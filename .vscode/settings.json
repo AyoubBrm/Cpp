@@ -68,7 +68,11 @@
         "__functional_03": "cpp",
         "memory_resource": "cpp",
         "__functional_base_03": "cpp",
-        "*.tpp": "cpp"
+        "*.tpp": "cpp",
+        "array.hpp": "c",
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

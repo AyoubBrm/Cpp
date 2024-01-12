@@ -1,15 +1,15 @@
 CC = c++
-CPPFLAGS = -Wextra -Werror -Wall -std=c++98 #-fsanitize=address -g
-SRC = main.cpp 
+CPPFLAGS = -Wextra -Werror -Wall -std=c++98
+SRC = main.cpp BitcoinExchange.cpp
 OBJ = ${SRC:.cpp=.o}
-NAME = whatever
+NAME = btc
 
 all : $(NAME)
 
-%.o		:	%.cpp whatever.hpp
+%.o		:	%.cpp BitcoinExchange.hpp
 		$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJ) whatever.hpp
+$(NAME) : $(OBJ) BitcoinExchange.hpp
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 clean : 
 	rm -rf $(OBJ)

@@ -19,7 +19,7 @@ Array<T>::Array(const Array& copy)
     {
         arr = NULL;
         *this = copy;
-    } 
+    }
 }
 
 template <class T>
@@ -37,7 +37,7 @@ Array<T>& Array<T>::operator=(const Array& op)
 template <class T>
 T& Array<T>::operator[](unsigned int index) const
 {
-    if (index >= 0 && index <= size())
+    if (index >= 0 && index < size())
         return arr[index];
     throw std::out_of_range("can't access to this element");
 }
@@ -49,7 +49,7 @@ unsigned int Array<T>::size() const
 }
 
 template <class T>
-Array<T>::~Array() 
+Array<T>::~Array()
 {
     delete [] arr;
 }

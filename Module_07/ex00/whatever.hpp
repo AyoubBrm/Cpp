@@ -1,27 +1,33 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <algorithm>
  
 template <class Type>
 
-static Type min(Type x, Type y)
+Type min(Type x, Type y)
 {
-    if (x == y)
+    if (y < x)
         return y;
-    return (std::min(x, y));
+    else if (x < y)
+        return x;
+    return y;
 }
 
 template <class Type>
-static Type max(Type x, Type y)
+Type max(Type x, Type y)
 {
-    if (x == y)
+    if (y > x)
         return y;
-    return (std::max(x, y));
+    else if (x > y)
+        return x;
+    return y;
 }
 
 template <class Type>
-static void swap(Type &x, Type &y)
+void swap(Type &x, Type &y)
 {
-    std::swap(x, y);
+    Type a = x;
+    Type b = y;
+    x = b;
+    y = a;
 }
